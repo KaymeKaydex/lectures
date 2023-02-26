@@ -61,7 +61,6 @@ require (
 	google.golang.org/grpc v1.46.2
 	google.golang.org/protobuf v1.28.0
 	gopkg.in/alexcesaro/statsd.v2 v2.0.0
-	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gorm.io/driver/mysql v1.3.6
 	gorm.io/gorm v1.23.8
 )
