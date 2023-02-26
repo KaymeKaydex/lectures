@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"math/rand"
 	"net/http"
@@ -72,7 +72,7 @@ func createUserHandler(w http.ResponseWriter, r *http.Request) {
 
 	// curl 'http://127.0.0.1:8080/user' -X POST -v -d '{"login": "user", "password": "123"}'
 	case http.MethodPost:
-		body, err := ioutil.ReadAll(r.Body)
+		body, err := io.ReadAll(r.Body)
 		if err != nil {
 			panic("request body read failure")
 		}
@@ -158,7 +158,7 @@ func todoHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write(todos)
 
 	case http.MethodPost:
-		body, err := ioutil.ReadAll(r.Body)
+		body, err := io.ReadAll(r.Body)
 		if err != nil {
 			panic("request body read failure")
 		}
