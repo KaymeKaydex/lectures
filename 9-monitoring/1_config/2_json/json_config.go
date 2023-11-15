@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 )
 
 type Config struct {
@@ -18,7 +18,7 @@ var (
 )
 
 func main() {
-	data, err := ioutil.ReadFile("./config.json")
+	data, err := os.ReadFile("./config.json")
 	if err != nil {
 		log.Fatalln("cant read config file:", err)
 	}

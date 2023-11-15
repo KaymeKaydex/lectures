@@ -3,9 +3,10 @@ package http
 import (
 	"errors"
 
+	"github.com/labstack/echo"
+
 	"github.com/go-park-mail-ru/lectures/5-architecture/7_frameworks/echo/middleware"
 	"github.com/go-park-mail-ru/lectures/5-architecture/7_frameworks/echo/user"
-	"github.com/labstack/echo"
 )
 
 type userHandler struct {
@@ -23,6 +24,7 @@ func NewUserHandler(e *echo.Echo, us user.Usecase) {
 
 func (h *userHandler) GetUser(ctx echo.Context) error {
 	ctx.Error(errors.New("some error"))
+	return nil
 }
 
 func (h *userHandler) GetAllUsers(ctx echo.Context) error {

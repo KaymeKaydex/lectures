@@ -19,6 +19,7 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/golang/protobuf v1.5.2
 	github.com/gomodule/redigo v1.8.9
+	github.com/google/uuid v1.3.0
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/schema v1.2.0
 	github.com/gorilla/websocket v1.5.0
@@ -54,6 +55,7 @@ require (
 	github.com/vektah/gqlparser v1.3.1
 	github.com/vektah/gqlparser/v2 v2.5.0 // indirect
 	go.mongodb.org/mongo-driver v1.10.1
+	go.uber.org/atomic v1.9.0
 	go.uber.org/zap v1.17.0
 	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d
 	golang.org/x/net v0.0.0-20220826154423-83b083e8dc8b

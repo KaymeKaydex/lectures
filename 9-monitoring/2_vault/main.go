@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/hashicorp/vault/api"
 )
@@ -17,11 +16,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	token := os.Getenv("token")
+	token := "123"
 	client.SetToken(token)
-	secretValues, err := client.Logical().Read("secret/data/postgres")
+	secretValues, err := client.Logical().Read("secret/data/postgresql")
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Printf("secret %s -> %+v", "postgres", secretValues.Data)
+	fmt.Println(secretValues)
+	//fmt.Printf("secret %s -> %+v", "postgres", secretValues.Data)
 }

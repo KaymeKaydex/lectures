@@ -133,7 +133,7 @@ func main() {
 	http.HandleFunc("/login", loginPage)
 	http.HandleFunc("/logout", logoutPage)
 	fmt.Println("starting server at :8080")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8085", nil)
 }
 
 func logoutPage(w http.ResponseWriter, r *http.Request) {

@@ -23,6 +23,7 @@ var (
 		Reason: "really bad things happened",
 		Code:   42,
 	}
+	ErrTest = fmt.Errorf("my error 1")
 )
 
 func someJob() error {
@@ -38,11 +39,6 @@ func someJob() error {
 	}
 
 	return nil
-}
-
-func jobWrapper() error {
-	err := someJob()
-	return errors.Wrap(err, "failed to do some job")
 }
 
 func main() {

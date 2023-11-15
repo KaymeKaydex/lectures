@@ -59,6 +59,7 @@ func logContextTimings(ctx context.Context, path string, start time.Time) {
 	if !ok {
 		return
 	}
+
 	totalReal := time.Since(start)
 	buf := bytes.NewBufferString(path)
 	var total time.Duration

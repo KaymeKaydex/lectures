@@ -11,6 +11,7 @@ var (
 	client = http.Client{Timeout: time.Duration(time.Millisecond)}
 
 	ErrResource = errors.New("resource error")
+	ErrTest     = errors.New("test")
 )
 
 func getRemoteResource() error {
@@ -19,6 +20,7 @@ func getRemoteResource() error {
 	if err != nil {
 		return ErrResource
 	}
+
 	return nil
 }
 

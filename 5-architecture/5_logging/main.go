@@ -53,7 +53,6 @@ func (ac *AccessLogger) accessLogMiddleware(next http.Handler) http.Handler {
 // -----------
 
 func main() {
-
 	addr := "localhost"
 	port := 8080
 
@@ -66,6 +65,7 @@ func main() {
 	// zap
 	// у zap-а нет логгера по-умолчанию
 	zapLogger, _ := zap.NewProduction()
+
 	defer zapLogger.Sync()
 	zapLogger.Info("starting server",
 		zap.String("logger", "ZAP"),

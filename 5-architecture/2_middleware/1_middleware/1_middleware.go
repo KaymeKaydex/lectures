@@ -135,7 +135,7 @@ func main() {
 
 	// set middleware
 	siteHandler := accessLogMiddleware(siteMux)
-	siteHandler = panicMiddleware(siteHandler)
+	// siteHandler = panicMiddleware(siteHandler)
 
 	fmt.Println("starting server at http://127.0.0.1:8080")
 	http.ListenAndServe(":8080", siteHandler)

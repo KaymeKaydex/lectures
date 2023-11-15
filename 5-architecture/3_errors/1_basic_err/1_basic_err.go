@@ -22,12 +22,12 @@ func getRemoteResource() error {
 
 		return fmt.Errorf("getRemoteResource: %s at %s", err, url)
 	}
+
 	return nil
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	err := getRemoteResource()
-
 	if err != nil {
 		fmt.Printf("error happend: %+v\n", err)
 		http.Error(w, "internal error", 500)

@@ -1,13 +1,13 @@
 package main
 
 import (
+	"github.com/labstack/echo"
+	echomiddleware "github.com/labstack/echo/middleware"
+
 	"github.com/go-park-mail-ru/lectures/5-architecture/7_frameworks/echo/middleware"
 	userhttp "github.com/go-park-mail-ru/lectures/5-architecture/7_frameworks/echo/user/delivery/http"
 	"github.com/go-park-mail-ru/lectures/5-architecture/7_frameworks/echo/user/repository"
 	"github.com/go-park-mail-ru/lectures/5-architecture/7_frameworks/echo/user/usecase"
-
-	"github.com/labstack/echo"
-	echomiddleware "github.com/labstack/echo/middleware"
 )
 
 const listenAddr = "127.0.0.1:8080"
@@ -15,9 +15,11 @@ const listenAddr = "127.0.0.1:8080"
 func main() {
 	e := echo.New()
 
-	e.Use(middleware.RequestIDMiddleware)
-	e.Use(echomiddleware.Logger())
-	e.Use(middleware.PanicMiddleware)
+	e.Use(
+		middleware.RequestIDMiddleware,
+		echomiddleware.Logger(),
+		middleware.PanicMiddleware,
+	)
 
 	e.HTTPErrorHandler = middleware.ErrorHandler
 

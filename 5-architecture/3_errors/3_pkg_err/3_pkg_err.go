@@ -14,10 +14,10 @@ var (
 )
 
 func getRemoteResource() error {
-	url := "http://127.0.0.1:9999/pages?id=123"
+	url := "httdg://127.0.0.1:9999/pages?id=123"
 	_, err := client.Get(url)
 	if err != nil {
-		return errors.Wrap(err, "resource error")
+		return errors.Wrap(err, "cant get remote resource with err")
 		// resource error: timeout
 	}
 	return nil
@@ -27,7 +27,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	err := getRemoteResource()
 	if err != nil {
 		fmt.Printf("full err: %+v\n", err)
-		switch err := errors.Cause(err).(type) {
+		switch err := err.(type) {
 		case *url.Error:
 			fmt.Printf("resource %s err: %+v\n", err.URL, err.Err)
 			http.Error(w, "remote resource error", 422)
