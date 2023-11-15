@@ -89,7 +89,7 @@ func main() {
 	siteHandler := configMiddleware(siteMux)
 
 	fmt.Println("starting server at :8080")
-	err := http.ListenAndServe(":8087", siteHandler)
+	err = http.ListenAndServe(":8087", siteHandler)
 	if err != nil {
 		fmt.Println(err)
 	}
